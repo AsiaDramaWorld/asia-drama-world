@@ -93,7 +93,7 @@ document.querySelectorAll('#cards .card').forEach(card=>{
     a.className='mini';
     a.textContent=text;
     // Use the stable country catalogue landing page to avoid broken deep-search URLs.
-    a.href = region==='uk' ? 'https://www.justwatch.com/uk' : 'https://www.justwatch.com/fr';
+    a.href = (region==='uk' ? 'https://www.justwatch.com/uk/search?q=' : 'https://www.justwatch.com/fr/recherche?q=') + encodeURIComponent(title);
     a.target='_blank';
     a.rel='noopener noreferrer';
     a.setAttribute('aria-label',text+' sur JustWatch. Rechercher le titre : '+title);
