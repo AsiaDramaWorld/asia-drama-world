@@ -68,7 +68,7 @@ document.querySelectorAll('#cards .card').forEach(card=>{
   box.style.cssText='display:flex;gap:7px;flex-wrap:wrap;margin-top:10px';
   const label=document.createElement('span'); label.textContent='Où regarder :'; label.style.cssText='width:100%;font-size:11px;color:#aab5ca'; box.appendChild(label);
   [['🇫🇷 France','fr'],['🇬🇧 Royaume-Uni','uk']].forEach(([text,region])=>{
-    const a=document.createElement('a'); a.className='mini'; a.textContent=text; a.href='https://www.justwatch.com/'+region+'/recherche?q='+encodeURIComponent(title); a.target='_blank'; a.rel='noopener noreferrer'; a.setAttribute('aria-label',text+' : rechercher '+title+' sur JustWatch'); box.appendChild(a);
+    const a=document.createElement('a'); a.className='mini'; a.textContent=text; a.href='https://www.justwatch.com/'+region+(region==='uk'?'/search':'/recherche')+'?q='+encodeURIComponent(title); a.target='_blank'; a.rel='noopener noreferrer'; a.setAttribute('aria-label',text+' : rechercher '+title+' sur JustWatch'); box.appendChild(a);
   });
   foot.insertAdjacentElement('afterend',box);
 });
